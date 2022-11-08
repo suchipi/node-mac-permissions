@@ -1,0 +1,16 @@
+.build
+.github
+.gitignore
+.husky
+src
+test
+.prettierrc
+CMakeLists.txt
+.idea
+build/CMakeCache.txt
+build/CMakeFiles
+build/compile_commands.json
+build/cmake_install.cmake
+build/.ninja_deps
+build/.ninja_log
+build/build.ninja

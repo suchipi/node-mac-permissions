@@ -1,4 +1,3 @@
-const { expect } = require('chai')
 const { askForFoldersAccess, getAuthStatus } = require('../index')
 
 describe('node-mac-permissions', () => {
@@ -6,7 +5,7 @@ describe('node-mac-permissions', () => {
     it('should throw on invalid types', () => {
       expect(() => {
         getAuthStatus('bad-type')
-      }).to.throw(/bad-type is not a valid type/)
+      }).toThrowError(/bad-type is not a valid type/)
     })
 
     it('should return a string', () => {
@@ -31,7 +30,7 @@ describe('node-mac-permissions', () => {
       const statuses = ['not determined', 'denied', 'authorized', 'restricted']
       for (const type of types) {
         const status = getAuthStatus(type)
-        expect(statuses).to.contain(status)
+        expect(statuses).toContain(status)
       }
     })
   })
@@ -40,7 +39,7 @@ describe('node-mac-permissions', () => {
     it('should throw on invalid types', () => {
       expect(() => {
         askForFoldersAccess('bad-type')
-      }).to.throw(/bad-type is not a valid protected folder/)
+      }).toThrowError(/bad-type is not a valid protected folder/)
     })
   })
 })
